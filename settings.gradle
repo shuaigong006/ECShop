@@ -1,1 +1,1 @@
-include ':app'
+include ':example', ':ec', ':core', ':compiler', ':annotation', ':ui'
