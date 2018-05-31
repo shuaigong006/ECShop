@@ -11,13 +11,11 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
 
-//delegate基础类
 public abstract class BaseDelegate extends SupportFragment {
 
     public abstract Object setLayout();
 
-    @SuppressWarnings("SpellCheckingInspection")
-    private Unbinder mUnbinder = null;
+    private Unbinder mUnBinder = null;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,18 +25,17 @@ public abstract class BaseDelegate extends SupportFragment {
         } else if (setLayout() instanceof View) {
             rootView = (View) setLayout();
         } else {
-            throw new NullPointerException("View is null");
+            throw new ClassCastException("view must be view or integer");
         }
-        mUnbinder = ButterKnife.bind(this, rootView);
+        mUnBinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (mUnbinder != null) {
-            mUnbinder.unbind();
-            mUnbinder = null;
+        if (mUnBinder != null) {
+            mUnBinder.unbind();
         }
     }
 }

@@ -13,7 +13,7 @@ public class ExampleApp extends Application {
     public void onCreate() {
         super.onCreate();
         ShopConfigure.init()
-                .withApiHost("")
+                .withApiHost("http://193.112.244.87/")
                 .withIcon(new FontAwesomeModule())
                 .configure();
     }
