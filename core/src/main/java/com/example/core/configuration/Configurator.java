@@ -1,5 +1,7 @@
 package com.example.core.configuration;
 
+import android.os.Handler;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
@@ -9,13 +11,16 @@ import java.util.HashMap;
 //全局配置类
 public class Configurator {
 
-    private static final HashMap<String, Object> SHOP_CONFIGS = new HashMap<>();
+    private static final HashMap<Object, Object> SHOP_CONFIGS = new HashMap<>();
 
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
+
+    private static final Handler HANDLER = new Handler();
 
     //初始化配置
     private Configurator() {
         SHOP_CONFIGS.put(ConfigureType.CONFIG_READY, false);
+        SHOP_CONFIGS.put(ConfigureType.HANDLER, HANDLER);
     }
 
     //实例化配置类
@@ -56,8 +61,8 @@ public class Configurator {
     }
 
     //获取配置类型
-    @SuppressWarnings({"unchecked", "SuspiciousMethodCalls", "UnusedReturnValue"})
-    public final <T> T getConfiguration(ConfigureType type) {
+    @SuppressWarnings("unchecked")
+    public final <T> T getConfiguration(String type) {
         final boolean isReady = (boolean) SHOP_CONFIGS.get(ConfigureType.CONFIG_READY);
         if (isReady) {
             return (T) SHOP_CONFIGS.get(type);

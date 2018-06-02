@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
 
+//delegate基础类
 public abstract class BaseDelegate extends SupportFragment {
 
     public abstract Object setLayout();
@@ -20,6 +21,7 @@ public abstract class BaseDelegate extends SupportFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View rootView;
+        //判断布局的类型
         if (setLayout() instanceof Integer) {
             rootView = inflater.inflate((Integer) setLayout(), container, false);
         } else if (setLayout() instanceof View) {

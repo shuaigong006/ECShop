@@ -10,4 +10,6 @@ public class ConfigureType {
     public static final String CONFIG_READY = "config_ready";
     //字体图标
     public static final String ICON = "icon";
+    //handler
+    public static final String HANDLER = "handler";
 }

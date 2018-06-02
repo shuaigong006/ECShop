@@ -17,7 +17,7 @@ public final class ShopConfigure {
         return configurator;
     }
 
-    public static <T> T getConfiguration(ConfigureType type) {
+    public static <T> T getConfiguration(String type) {
         return configurator.getConfiguration(type);
     }
 }
