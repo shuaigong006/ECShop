@@ -1,7 +1,5 @@
 package com.example.ui.recycler;
 
-import java.security.PublicKey;
-
 public class MultipleFields {
     public static final String ITEM_TYPE = "ITEM_TYPE";
     public static final String TITLE = "TITLE";

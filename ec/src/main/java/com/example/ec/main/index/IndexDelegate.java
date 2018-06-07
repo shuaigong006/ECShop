@@ -29,12 +29,24 @@ public class IndexDelegate extends BottomItemDelegate {
         return R.layout.delegate_index;
     }
 
+    //初始化下拉刷新
+    private void initRefreshLayout(){
+        mRefreshLayout.setColorSchemeResources(
+                android.R.color.holo_blue_bright,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light
+        );
+        mRefreshLayout.setProgressViewOffset(true,0,50);
+    }
+
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
+        initRefreshLayout();
         GridLayoutManager manager = new GridLayoutManager(getContext(),4);
         mRecyclerView.setLayoutManager(manager);
         mRefreshHandler = RefreshHandler.create(mRefreshLayout,mRecyclerView,new IndexDataConverter());
         mRefreshHandler.firstPage("index.php");
+        mRecyclerView.addOnItemTouchListener(new IndexItemClickListener());
     }
 }

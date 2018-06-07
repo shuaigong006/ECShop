@@ -36,6 +36,11 @@ public class MultipleItem implements MultiItemEntity {
         return ITEM_REFERENCE.get();
     }
 
+    public final MultipleItem setItem(Object key,Object value){
+        ITEM_REFERENCE.get().put(key,value);
+        return this;
+    }
+
     public static MultipleItemBuilder builder(){
         return new MultipleItemBuilder();
     }
@@ -47,6 +52,11 @@ public class MultipleItem implements MultiItemEntity {
         MultipleItemBuilder() {
             //清除之前的数据
             ITEMS.clear();
+        }
+
+        public final MultipleItemBuilder setItemType(int itemType) {
+            ITEMS.put(MultipleFields.ITEM_TYPE, itemType);
+            return this;
         }
 
         //设置Item数据
