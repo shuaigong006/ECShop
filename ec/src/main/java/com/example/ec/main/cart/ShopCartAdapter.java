@@ -1,6 +1,7 @@
 package com.example.ec.main.cart;
 
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;

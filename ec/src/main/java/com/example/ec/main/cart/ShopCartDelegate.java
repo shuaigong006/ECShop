@@ -119,5 +119,4 @@ public class ShopCartDelegate extends BottomItemDelegate implements
             mRecyclerView.setVisibility(View.VISIBLE);
         }
     }
-
 }

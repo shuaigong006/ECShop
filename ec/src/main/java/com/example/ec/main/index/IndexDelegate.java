@@ -47,6 +47,6 @@ public class IndexDelegate extends BottomItemDelegate {
         mRecyclerView.setLayoutManager(manager);
         mRefreshHandler = RefreshHandler.create(mRefreshLayout,mRecyclerView,new IndexDataConverter());
         mRefreshHandler.firstPage("index.php");
-        mRecyclerView.addOnItemTouchListener(new IndexItemClickListener());
+        mRecyclerView.addOnItemTouchListener(new IndexItemClickListener(this));
     }
 }

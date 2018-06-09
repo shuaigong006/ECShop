@@ -36,4 +36,8 @@ dependencies {
     //Banner依赖
     api 'com.bigkoo:convenientbanner:2.0.5'
     api 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    //View动画依赖
+    api 'com.android.support:support-compat:27.1.1'
+    api 'com.daimajia.easing:library:2.0@aar'
+    api 'com.daimajia.androidanimations:library:2.3@aar'
 }

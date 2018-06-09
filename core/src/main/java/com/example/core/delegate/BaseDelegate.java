@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.core.activity.ProxyActivity;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
@@ -31,6 +33,10 @@ public abstract class BaseDelegate extends SupportFragment {
         }
         mUnBinder = ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+    public final ProxyActivity getProxyActivity() {
+        return (ProxyActivity) _mActivity;
     }
 
     @Override
